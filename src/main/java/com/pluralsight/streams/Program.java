@@ -44,6 +44,20 @@ public class Program {
                 System.out.println(" - " + match.getFirstName() + " - " + match.getLastName() + " - " + match.getAge() );
             }
         }
+        int avgAge = 0;
+        int oldest = -1;
+        int youngest = 1000;
+
+        for (Person person: people) {
+            avgAge += person.getAge();
+            if (person.getAge() > oldest)  oldest = person.getAge();
+            if (person.getAge() < youngest) youngest = person.getAge();
+        }
+        System.out.println("Average Age of all People: " + avgAge / people.size());
+        System.out.println("Oldest Age of all People: " + oldest);
+        System.out.println("Youngest Age of all People: " + youngest);
+
+
 
 
     }
