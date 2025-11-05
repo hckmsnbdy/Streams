@@ -38,6 +38,25 @@ public class StreamProgram {
           matches.forEach(p -> System.out.println("Name: "+p.getFirstName()+" "+p.getLastName()+"\nAge: "+p.getAge()));
       }
 
+        int totalAge = people.stream().map(p -> p.getAge()).reduce(0, (a, b) -> a + b);
+
+        double count = people.stream().count();
+        double averageAge = (double) totalAge / count;
+
+        System.out.printf("Average age of all people: %.2f\n", averageAge);
+
+        List<Integer> sortedAges = people.stream()
+                .map(p -> p.getAge())
+                .sorted()
+                .toList();
+
+        int youngest = sortedAges.get(0);
+
+        int oldest = sortedAges.get(sortedAges.size() - 1);
+
+        System.out.println("Youngest age: " + youngest);
+        System.out.println("Oldest age: " + oldest);
+
 
     }
 }
