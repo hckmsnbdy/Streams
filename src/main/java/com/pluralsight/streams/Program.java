@@ -7,19 +7,9 @@ import java.util.Scanner;
 
 public class Program {
     public static void main(String[] args) {
-        /**
-         * Jerry Pittman
-         * Rachael Strong
-         * Rae Shepherd
-         * Bernardo Torres
-         * Gregorio Franklin
-         * Nathan Fox
-         * Brenton Barry
-         * Victoria French
-         * Timothy Ortega
-         * Roslyn Tran
-        */
+
         Scanner scanner = new Scanner(System.in);
+
         List<Person> people = new ArrayList<>();
         people.add(new Person("Jerry",     "Pittman",   19));
         people.add(new Person("Rachael",    "Strong",    22));
