@@ -24,15 +24,27 @@ public class Program {
         people.add(new Person("Alex",    "Johnson",  33));
 
 
-        System.out.println("Please enter a name(First and Last) to search:");
+        System.out.print("Please enter a name(First or Last) to search:");
         String input = scanner.nextLine().trim();
 
         List<Person> matches = new ArrayList<>();
 
-        for (int i = 0; i < people.size(); i++){
-
-
+        for (Person p : people) {
+            if (p.getFirstName().equalsIgnoreCase(input) ||
+                    p.getLastName().equalsIgnoreCase(input)) {
+                matches.add(p);
+            }
         }
+
+        if (matches.isEmpty()) {
+            System.out.println("No match found for: " + input);
+        } else {
+            System.out.println("Matches:");
+            for (Person match : matches) {
+                System.out.println(" - " + match.getFirstName() + " - " + match.getLastName() + " - " + match.getAge() );
+            }
+        }
+
 
     }
 }
